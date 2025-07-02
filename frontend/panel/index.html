@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../main/app.css" />
+		<title>Document</title>
+	</head>
+	<body class="bg-purple-700">
+		<svg class="hidden">
+			<symbol
+				id="user"
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="size-6"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+				/>
+			</symbol>
+		</svg>
+		<!-- start design -->
+		<!-- delete modal -->
+		<div
+			id="deleteModal"
+			class="fixed top-8 right-0 left-0 bg-white opacity-0 hidden justify-center w-98 h-45 mx-auto rounded-lg p-5 transition-opacity ease-in-out z-40"
+		>
+			<div
+				id="deleteModalContent"
+				class="flex flex-col items-center h-full justify-around transition-transform"
+			>
+				<h3 class="text-2xl font-sans mb-5 text-indigo-950 tracking-tight">
+					آیا از حذف این کاربر مطمئن هستید؟
+				</h3>
+				<div class="flex gap-2">
+					<button
+						id="acceptDeleteBtn"
+						class="bg-blue-700 px-8 py-2 rounded-lg cursor-pointer hover:bg-blue-800 text-white transition-colors"
+					>
+						بله
+					</button>
+					<button
+						id="deAcceptDeleteBtn"
+						class="bg-gray-500 px-8 py-2 rounded-lg cursor-pointer hover:bg-gray-600 text-white transition-colors"
+					>
+						خیر
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- edit modal -->
+		<div
+			id="editModal"
+			class="fixed top-8 right-0 left-0 bg-white hidden opacity-0 justify-center w-120 h-120 mx-auto rounded-lg px-10 py-5 transition-opacity ease-in-out z-40"
+		>
+			<div class="text-center">
+				<h3 class="text-2xl">اطلاعات کاربر مورد نظر را بنویسید</h3>
+				<form id="edit-form" class="*:my-10">
+					<div>
+						<input
+							class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+							type="text"
+							placeholder="نام"
+							id="firstname"
+						/>
+						<span
+							id="errorFnMessage"
+							class="text-amber-400 tracking-tighter text-lg hidden"
+						>
+						</span>
+					</div>
+					<div>
+						<input
+							class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+							type="text"
+							placeholder="نام خانوادگی"
+							id="lastname"
+						/>
+						<span
+							id="errorLnMessage"
+							class="text-amber-400 tracking-tighter text-lg hidden"
+						>
+						</span>
+					</div>
+					<div>
+						<input
+							class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+							type="email"
+							placeholder="ایمیل"
+							id="email"
+							autocomplete="email"
+							required
+						/>
+						<span
+							id="errorEmailMessage"
+							class="text-amber-400 tracking-tighter text-lg hidden"
+						>
+						</span>
+					</div>
+					<div>
+						<input
+							class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+							type="password"
+							placeholder="پسورد"
+							id="password"
+						/>
+					</div>
+					<button
+						id="acceptEditBtn"
+						type="submit"
+						class="flex w-full justify-center rounded-md bg-blue-950 cursor-pointer px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs transition-colors hover:bg-blue-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+					>
+						ثبت اطلاعات
+					</button>
+				</form>
+			</div>
+		</div>
+		<!-- userwrapper -->
+		<div class="flex justify-center items-center px-6 py-12">
+			<div
+				id="user-wrapper"
+				class="bg-gray-300 max-w-2xl w-full h-150 overflow-y-scroll shadow-2xl"
+			></div>
+		</div>
+		<div
+			id="coverBg"
+			class="absolute left-0 top-0 bottom-0 right-0 w-full h-full bg-zinc-800/50 hidden"
+		></div>
+		<script src="./js/users.js"></script>
+	</body>
+</html>
